@@ -12,7 +12,7 @@ function showPics(links, pictures) {
     for (let i = 0; i < links.length; i++) {
         pictures[i].appendChild(document.createElement('img'));
         pictures[i].children[0].src = links[i];
-        pictures[i].children[0].setAttribute('isChoose', 'false');
+        pictures[i].children[0].setAttribute('data-isChoose', 'false');
     }
 }
 
@@ -39,7 +39,7 @@ function setAttribute(pictures) {
             
             for (let i = 0; i < pictures.length; i++) {
                 if (srcs.includes(pictures[i].children[0].src)) {
-                    pictures[i].children[0].setAttribute('isChoose', 'true');
+                    pictures[i].children[0].setAttribute('data-isChoose', 'true');
                 }
             }
         } else {
@@ -54,19 +54,20 @@ function setExcretion() {
         
     imgs.forEach(img => {
         img.addEventListener('load', () => {
-            if (img.getAttribute('isChoose') == 'true') {
+            if (img.getAttribute('data-isChoose') == 'true') {
                 img.style.border = '4px solid blue'; 
                 selectedPic.push(img.src);
+                
             }
         });
 
         img.addEventListener('click', () => {
-            if (img.getAttribute('isChoose') == 'false') {
-                img.setAttribute('isChoose', 'true');
+            if (img.getAttribute('data-isChoose') == 'false') {
+                img.setAttribute('data-isChoose', 'true');
                 img.style.border = '4px solid blue';  
                 selectedPic.push(img.src);
             } else {
-                img.setAttribute('isChoose', 'false');
+                img.setAttribute('data-isChoose', 'false');
                 img.style.border = 'none'; 
                 let index = selectedPic.indexOf(img.src);
                 if (index !== -1) {
@@ -96,7 +97,7 @@ function sendWithXML(choosenSrcs, images, cols) {
 
     images.forEach(img => {
         img.addEventListener('load', () => {
-            if (img.getAttribute('isChoose') == 'true') {
+            if (img.getAttribute('data-isChoose') == 'true') {
                 img.style.border = '4px solid blue';
                 console.log('1')
             }
@@ -131,8 +132,8 @@ function sendWithXML(choosenSrcs, images, cols) {
 
 
 const pictures = [
-    'img/_117310488_16.jpg',
-    'img/_119449972_10.jpg',
+    'img/snow.jpg',
+    'img/sky.jpg',
     'img/animal-children-photography-elena-shumilova-2.jpg',
     'img/Best-of-2016-Nasim-Mansurov-20.jpg',
     'img/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg',
