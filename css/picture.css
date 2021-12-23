@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: black;
-    font-family: 'Ubuntu', sans-serif;
+
     font-weight: 400;
     list-style-type: none;
     text-decoration: none;
@@ -21,8 +19,9 @@ body {
 }
 
 h1 {
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
+    font-size: 24px;
 }
 
 .pic {
@@ -42,23 +41,13 @@ img:hover {
     border: 3px solid black;
 }
 
-.info {
+form {
+    width: 400px;
     position: absolute;
     border: 1px solid black;
     padding: 10px;
     margin-left: 15px;
     top: 70px;
-    font-size: 16px;
-}
-
-form {
-    width: 400px;
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 10px;
-    margin-left: 15px;
-    top: 140px;
     right: 20px;
     font-size: 16px;
 }
@@ -75,9 +64,5 @@ form {
 }
 
 .back:hover {
-    background-color: green;
-}
-
-form, .info {
-    position: fixed;
+    background-color: rgb(1, 128, 71);
 }

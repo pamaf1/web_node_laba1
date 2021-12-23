@@ -19,7 +19,7 @@ p {
     font-size: 16px;
 }
 
-.grid-item1 {
+.grid-element1 {
     display: flex;
     grid-column-start: 1;
     grid-column-end: 5;
@@ -29,14 +29,14 @@ p {
     border: 1px solid black;
 }
 
-.grid-item1 h1 {
+.grid-element1 h1 {
     float: right;
     padding-top: 45px;
     font-size: 24px;
     margin-right: 30px;
 }
 
-.grid-item2 {
+.grid-element2 {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
@@ -45,25 +45,25 @@ p {
     border: 1px solid black;
 }
 
-.grid-item3, .grid-item4, .grid-item5 {
+.grid-element3, .grid-element4, .grid-element5 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.grid-item3 {
+.grid-element3 {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 10;
 }
 
-.grid-item3 img {
+.grid-element3 img {
     width: 770px;
     height: 436px;
 }
 
-.grid-item4 {
+.grid-element4 {
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 3;
@@ -74,7 +74,7 @@ p {
 
 }
 
-.grid-item5 {
+.grid-element5 {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 4;
@@ -83,7 +83,7 @@ p {
     border: 1px solid black;
 }
 
-.grid-item6 {
+.grid-element6 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +95,7 @@ p {
     border: 1px solid black;
 }
 
-.grid-item7 {
+.grid-element7 {
     display: flex;
     grid-column-start: 1;
     grid-column-end: 5;
@@ -120,7 +120,7 @@ p {
 }
 
 .menu-link:hover {
-    color: red;
+    color: rgb(1, 128, 71);
 }
 
 .title {

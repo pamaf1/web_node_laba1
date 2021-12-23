@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let pics = Array.from(document.querySelectorAll('.pic'));
+    let picture = Array.from(document.querySelectorAll('.pic'));
 
-    showPics(pictures, pics);
-    setAttribute(pics);
-    setExcretion();
+    displayPictures(pictures, picture);
+    addSettings(picture);
+    addBacklight();
 
     
 });
 
-function showPics(links, pictures) {
+function displayPictures(links, pictures) {
     for (let i = 0; i < links.length; i++) {
         pictures[i].appendChild(document.createElement('img'));
         pictures[i].children[0].src = links[i];
@@ -17,7 +17,7 @@ function showPics(links, pictures) {
 }
 
 
-function setAttribute(pictures) {
+function addSettings(pictures) {
     const request = new XMLHttpRequest();
     request.open('GET', 'http://localhost:3000/settings');
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -48,14 +48,14 @@ function setAttribute(pictures) {
     });
 }
 
-function setExcretion() {
+function addBacklight() {
     let imgs = Array.from(document.querySelectorAll('img'))
         selectedPic = [];
         
     imgs.forEach(img => {
         img.addEventListener('load', () => {
             if (img.getAttribute('data-isChoose') == 'true') {
-                img.style.border = '4px solid blue'; 
+                img.style.border = '4px solid rgb(1, 128, 71)'; 
                 selectedPic.push(img.src);
                 
             }
@@ -64,7 +64,7 @@ function setExcretion() {
         img.addEventListener('click', () => {
             if (img.getAttribute('data-isChoose') == 'false') {
                 img.setAttribute('data-isChoose', 'true');
-                img.style.border = '4px solid blue';  
+                img.style.border = '4px solid rgb(1, 128, 71)';  
                 selectedPic.push(img.src);
             } else {
                 img.setAttribute('data-isChoose', 'false');
@@ -98,7 +98,7 @@ function sendWithXML(choosenSrcs, images, cols) {
     images.forEach(img => {
         img.addEventListener('load', () => {
             if (img.getAttribute('data-isChoose') == 'true') {
-                img.style.border = '4px solid blue';
+                img.style.border = '4px solid rgb(1, 128, 71)';
                 console.log('1')
             }
         });
@@ -132,14 +132,14 @@ function sendWithXML(choosenSrcs, images, cols) {
 
 
 const pictures = [
-    'img/snow.jpg',
-    'img/sky.jpg',
-    'img/animal-children-photography-elena-shumilova-2.jpg',
-    'img/Best-of-2016-Nasim-Mansurov-20.jpg',
-    'img/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg',
-    'img/india-in-pictures-beautiful-places-to-photograph-taj-mahal.jpg',
-    'img/istockphoto-1145618475-612x612.jpg',
-    'img/tree-736885__480.jpg',
+    'img/1.jpg',
+    'img/3.jpg',
+    'img/6.jpg',
+    'img/5.jpg',
+    'img/7.jpg',
+    'img/car.jpg',
+    'img/8.jpg',
+    'img/9.jpg',
     'img/4.jpg',
     'img/2.jpg',
 ];

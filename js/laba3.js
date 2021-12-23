@@ -13,9 +13,9 @@ exerciseButton.addEventListener('click', () => {
 });
 
 
-const block4 = document.querySelector('.grid-item4');
+const block4 = document.querySelector('.grid-element4');
 
-function getPics() {
+function displayPicture() {
     const request = new XMLHttpRequest();
     request.open('GET', 'http://localhost:3000/settings');
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -42,5 +42,5 @@ function getPics() {
     });
 }
 
-getPics();
+displayPicture();
 
